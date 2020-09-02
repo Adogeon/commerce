@@ -9,6 +9,7 @@ export const ProductsContext = React.createContext()
  */
 const ProductsProvider = ({ children }) => {
   const data = useStaticQuery(skusQuery)
+  console.log(data)
   return <Provider data={data}>{children}</Provider>
 }
 
@@ -44,6 +45,8 @@ const Provider = ({ data, children }) => {
     }
 
     const [liveProducts, liveSkus] = mergeStripeData(data, products)
+    console.log(liveProducts)
+    console.log(liveSkus)
     setProducts(liveProducts)
     setSkus(liveSkus)
   }

@@ -5,7 +5,10 @@ module.exports.handler = async (event, context, callback) => {
     return { statusCode: 401, body: "" }
   }
 
+  console.log("Should launch reallY!")
+
   const requestBody = JSON.parse(event.body)
+  console.log(requestBody)
 
   const product = await stripe.products.create({
     ...requestBody.product,

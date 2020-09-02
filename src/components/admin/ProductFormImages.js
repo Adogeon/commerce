@@ -31,14 +31,15 @@ function ProductFormImages({ productImages, setProductImages }) {
         </label>
       </div>
       <div className={css.container}>
-        {productImages.map(src => (
-          <div className={css.image} key={src}>
-            <button onClick={() => remove(src)} className={css.remove}>
-              &times;
-            </button>
-            <img src={src} alt={"Could not load image"} />
-          </div>
-        ))}
+        {productImages &&
+          productImages.map(src => (
+            <div className={css.image} key={src}>
+              <button onClick={() => remove(src)} className={css.remove}>
+                &times;
+              </button>
+              <img src={src} alt={"Could not load image"} />
+            </div>
+          ))}
       </div>
     </>
   )

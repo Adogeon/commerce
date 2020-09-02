@@ -7,7 +7,10 @@ import ProductForm from "./ProductForm"
 function ProductPage({ productId, create }) {
   const { products } = useContext(StripeProductsContext)
   if (create) {
-    const product = { skus: [{ inventory: { type: "infinite" }, price: "" }] }
+    const product = {
+      skus: [{ inventory: { type: "infinite" }, price: "" }],
+      images: [],
+    }
     return <ProductForm product={product} create></ProductForm>
   } else if (productId && products[productId]) {
     const product = products[productId]
